@@ -33,7 +33,7 @@
   }
 }
 .main-box {
-  background: rgb(247, 247, 247);
+  // background: rgb(247, 247, 247);
   height: 400px;
   display: flex;
   justify-content: center;
@@ -41,14 +41,14 @@
   border-radius: 1rem;
   padding: 2rem;
   position: relative;
-  counter-increment: myCounter;
-  &::before {
-    content: counter(myCounter);
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    color: rgb(202, 202, 202);
-  }
+  // counter-increment: myCounter;
+  // &::before {
+  //   content: counter(myCounter);
+  //   position: absolute;
+  //   top: 1rem;
+  //   left: 1rem;
+  //   color: rgb(202, 202, 202);
+  // }
 
   &:hover {
     &::before {
@@ -77,7 +77,7 @@
     background: linear-gradient(
       135deg,
       rgba(0, 255, 214, 1) 0%,
-      rgba(8, 226, 96, 1) 100%
+      rgb(5, 96, 214) 100%
     );
     transition: all 0.5s ease-in-out;
     transform-style: preserve-3d;
@@ -169,9 +169,9 @@
       transform: translate3d(0, 0, 26px);
       .title {
         display: block;
-        color: #00894d;
+        color: #002589;
         font-weight: 900;
-        font-size: 20px;
+        font-size: 24px;
       }
       .text {
         display: block;
