@@ -95,16 +95,14 @@ const Recap = () => {
 
   console.log("inscriptionData", inscriptionData);
   const onSubmitInscription = () => {
-    // Call the createInscription function to save the data to the database
     createInscription(inscriptionData)
       .then(() => {
-        // Navigate to another page after saving (e.g., a success page)
         notify();
       })
-      .then(() => {
-        // Navigate to another page after saving (e.g., a success page)
-        navigate("/");
-      })
+      // .then(() => {
+
+      //   navigate("/");
+      // })
       .catch((err) => {
         console.error("Error saving data: ", err);
       });
