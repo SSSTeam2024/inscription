@@ -8,7 +8,7 @@ export interface Classe {
 export const classeSlice = createApi({
   reducerPath: "Classe",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://backend-ecole-primaire.onrender.com/api/classes/",
+    baseUrl: `${process.env.REACT_APP_API_URL}/api/classes/`,
     // baseUrl: "http://localhost:3000/api/classes/",
   }),
   tagTypes: ["Classe"],

@@ -38,8 +38,8 @@ export interface Inscription {
 export const inscriptionsSlice = createApi({
   reducerPath: "Inscription",
   baseQuery: fetchBaseQuery({
-    // baseUrl: "https://backend-ecole-primaire.onrender.com/api/inscriptions/",
-    baseUrl: "http://localhost:3000/api/inscriptions/",
+    baseUrl: `${process.env.REACT_APP_API_URL}/api/inscriptions/`,
+    // baseUrl: "http://localhost:3000/api/inscriptions/",
   }),
   tagTypes: ["Inscription"],
   endpoints(builder) {
