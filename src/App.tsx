@@ -11,8 +11,10 @@ const App = () => {
   return (
     <InscriptionProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/inscription" element={<Inscriptions />} />
+        <Route path="/" element={<Navigate to="/inscription" />} />
+        <Route path="/inscription" element={<Home />} />
+        <Route path="/inscriptionCollège" element={<Inscriptions />} />
+        <Route path="/inscriptionLycée" element={<Inscriptions />} />
         <Route path="/recap" element={<Recap />} />
       </Routes>
     </InscriptionProvider>

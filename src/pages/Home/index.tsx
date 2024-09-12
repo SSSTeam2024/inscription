@@ -34,7 +34,7 @@ const Home = () => {
         <Row>
           <div className="container">
             <Link
-              to="/inscription"
+              to="/inscriptionCollège"
               className="custom-link"
               state={college}
               style={{ textDecoration: "none" }}
@@ -114,7 +114,7 @@ const Home = () => {
               </div>
             </Link>
             <Link
-              to="/inscription"
+              to="/inscriptionLycée"
               className="custom-link"
               state={lycee}
               style={{ textDecoration: "none" }}
