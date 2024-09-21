@@ -4,6 +4,8 @@ import mocukup from "assets/img/unnamed.webp";
 import "./style.css";
 import { Button } from "react-bootstrap";
 const IndexPage: React.FC = () => {
+  document.title = "Accueil | Sousse Leaders School";
+
   const tog_Ios = () => {
     const link = document.createElement("a");
     link.href = "https://apps.apple.com/us/app/sls-sousse/id6692633299";

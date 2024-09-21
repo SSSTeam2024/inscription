@@ -23,6 +23,7 @@ function convertToBase64(
 }
 
 const InscriptionCollege = () => {
+  document.title = "Inscription Collège| Sousse Leaders School";
   const [createInscription] = useAddNewInscriptionMutation();
 
   const [selectedOption, setSelectedOption] = useState("");

@@ -31,6 +31,7 @@ function convertToBase64(
 }
 
 const InscriptionLycee = () => {
+  document.title = "Inscription Lycée | Sousse Leaders School";
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleChange = (event: any) => {
