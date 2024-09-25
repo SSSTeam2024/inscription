@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logolight from "assets/images/sls-logo2.png";
 import mocukup from "assets/img/unnamed.webp";
 import "./style.css";
 import { Button } from "react-bootstrap";
+import { useFetchFileQuery } from "features/file/fileSlice";
 const IndexPage: React.FC = () => {
   document.title = "Accueil | Sousse Leaders School";
-
+  const { data: fileBlob, isSuccess } = useFetchFileQuery();
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  useEffect(() => {
+    if (isSuccess && fileBlob) {
+      const url = URL.createObjectURL(fileBlob);
+      setDownloadUrl(url); // Store the download URL
+    }
+  }, [fileBlob, isSuccess]);
   const tog_Ios = () => {
     const link = document.createElement("a");
-    link.href = "https://apps.apple.com/us/app/sls-sousse/id6692633299";
+    link.href = "https://apps.apple.com/app/sls-sousse/id6692633299";
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();
@@ -23,13 +31,15 @@ const IndexPage: React.FC = () => {
     document.body.removeChild(link);
   };
   const tog_Apk = () => {
-    const link = document.createElement("a");
-    link.href =
-      "https://www.mediafire.com/file/1lktoif9quhwunv/sls-20-09-2024.apk/file";
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (downloadUrl) {
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = "sls.apk"; // The file name for the download
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
   return (
     <>
@@ -76,8 +86,9 @@ const IndexPage: React.FC = () => {
                 <Button
                   variant="outline-primary rounded-pill btn-lg"
                   onClick={tog_Apk}
+                  disabled={!downloadUrl} // Disable the button if downloadUrl is not available
                 >
-                  <i className="ri-android-fill"></i>Apk
+                  <i className="ri-android-fill"></i> Apk
                 </Button>
               </div>
             </div>

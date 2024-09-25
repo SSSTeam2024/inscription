@@ -4,16 +4,19 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 
 import { inscriptionsSlice } from "features/inscriptions/inscriptionSlice";
 import { classeSlice } from "features/classes/classeSlice";
+import { fileSlice } from "features/file/fileSlice";
 
 export const store = configureStore({
   reducer: {
     [inscriptionsSlice.reducerPath]: inscriptionsSlice.reducer,
     [classeSlice.reducerPath]: classeSlice.reducer,
+    [fileSlice.reducerPath]: fileSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware().concat([
       inscriptionsSlice.middleware,
-      classeSlice.middleware
+      classeSlice.middleware,
+      fileSlice.middleware
     ]);
   },
 });
